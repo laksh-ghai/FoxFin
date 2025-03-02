@@ -29,33 +29,25 @@ async function getStockData() {
             let stock = priceData.quoteResponse.result[0];
             let price = stock.regularMarketPrice;
             let change = stock.regularMarketChangePercent.toFixed(2);
+            
+            let fiftyLow = stock.fiftyTwoWeekLow.toFixed(2);
+            let fiftyHigh = stock.fiftyTwoWeekHigh.toFixed(2);
+            let fiftyAvg = stock.fiftyDayAverage.toFixed(2);
+            
             document.getElementById("result").innerHTML = 
-                `📈 <b>${ticker}</b>: $${price} (${change}%)`;
+                ` 
+                <b>Stock:</b> ${ticker} <br>
+                💲 <b>Price:</b> $${price} (${change}%) <br>
+                <b>50-Day Moving Avg:</b> $${fiftyAvg}
+                <b>50-Day High </b> $${fiftyHigh}
+                <b>50-Day Low </b> $${fiftyLow}                
+                `;
         } else {
             document.getElementById("result").innerHTML = "❌ Invalid stock ticker.";
             return;
         }
 
-        // Fetch stock statistics
-        const statsResponse = await fetch(statsUrl, options);
-        const statsData = await statsResponse.json();
-
-        if (statsData) {
-            let marketCap = statsData.price.marketCap ? statsData.price.marketCap.fmt : "N/A";
-            let peRatio = statsData.defaultKeyStatistics.forwardPE ? statsData.defaultKeyStatistics.forwardPE.fmt : "N/A";
-            let high52 = statsData.summaryDetail.fiftyTwoWeekHigh ? statsData.summaryDetail.fiftyTwoWeekHigh.fmt : "N/A";
-            let low52 = statsData.summaryDetail.fiftyTwoWeekLow ? statsData.summaryDetail.fiftyTwoWeekLow.fmt : "N/A";
-            
-            document.getElementById("stats").innerHTML = `
-                📊 <b>Market Cap:</b> ${marketCap} <br>
-                🔄 <b>P/E Ratio:</b> ${peRatio} <br>
-                📈 <b>52-Week High:</b> $${high52} <br>
-                📉 <b>52-Week Low:</b> $${low52}
-            `;
-        } else {
-            document.getElementById("stats").innerHTML = "❌ No statistics available.";
-        }
-
+        
     } catch (error) {
         console.error("Error fetching stock data:", error);
         document.getElementById("result").innerHTML = "❌ Could not fetch stock data.";
