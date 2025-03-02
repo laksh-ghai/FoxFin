@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Stock Price Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📈 Stock Price Checker</h1>
+        <p>Enter a stock symbol (e.g., AAPL, TSLA, AMZN) and get its real-time price.</p>
+        
+        <div class="input-container">
+            <input type="text" id="stockTicker" placeholder="Enter stock symbol..." />
+            <button onclick="getStockPrice()">Get Price</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
