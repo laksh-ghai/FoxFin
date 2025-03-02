@@ -59,19 +59,30 @@ button:hover {
     background: #0056b3;
 }
 
-#result, #stats {
-    margin-top: 20px;  /* Ensures spacing between elements */
+/* ✅ FIXED: Separate styles for #result and #stats */
+#result {
+    margin-top: 20px;
+    padding: 10px;
     font-size: 16px;
     font-weight: bold;
     color: #333;
-    text-align: left;
-    width: 100%;  /* Ensures proper width */
-    display: block;  /* Prevents inline behavior */
+    text-align: center;
+    background: #eaf4ff; /* Light blue background */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
 
 #stats {
-    margin-top: 10px;  /* Additional spacing between result & stats */
-    padding-top: 10px;
-    border-top: 1px solid #ccc;  /* Adds a subtle divider */
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    text-align: left;
+    background: #f9f9f9; /* Light gray background */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    line-height: 1.6; /* Improves text readability */
 }
-
