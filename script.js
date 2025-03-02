@@ -38,7 +38,7 @@ async function getStockData() {
                 ` 
                 <b>Stock:</b> ${ticker} <br>
                 💲 <b>Price:</b> $${price} (${change}%) <br>
-                <b>50-Day Moving Avg:</b> $${fiftyAvg}
+                <b>50-Day Moving Avg:</b> $${fiftyAvg} <br>
                 <b>50-Day High </b> $${fiftyHigh}
                 <b>50-Day Low </b> $${fiftyLow}                
                 `;
