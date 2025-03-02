@@ -6,14 +6,14 @@ async function getStockPrice() {
         return;
     }
 
-    const apiKey = "YOUR_RAPIDAPI_KEY"; // Replace with your actual API key
-    const url = `https://yh-finance.p.rapidapi.com/market/v2/get-quotes?symbols=${ticker}&region=US`;
+    const apiKey = "8a5a6d83aemshc1932fb3028c609p117effjsn769029e7fd22"; 
+    const url = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes?symbols=${ticker}&region=US`;
 
     const options = {
         method: "GET",
         headers: {
             "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "yh-finance.p.rapidapi.com"
+            "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
     };
 
