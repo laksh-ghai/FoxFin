@@ -60,9 +60,18 @@ button:hover {
 }
 
 #result, #stats {
-    margin-top: 20px;
+    margin-top: 20px;  /* Ensures spacing between elements */
     font-size: 16px;
     font-weight: bold;
     color: #333;
     text-align: left;
+    width: 100%;  /* Ensures proper width */
+    display: block;  /* Prevents inline behavior */
 }
+
+#stats {
+    margin-top: 10px;  /* Additional spacing between result & stats */
+    padding-top: 10px;
+    border-top: 1px solid #ccc;  /* Adds a subtle divider */
+}
+
