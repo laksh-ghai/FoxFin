@@ -16,7 +16,7 @@ async function getStockData() {
         method: "GET",
         headers: {
             "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "yh-finance.p.rapidapi.com"
+            "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
         }
     };
 
